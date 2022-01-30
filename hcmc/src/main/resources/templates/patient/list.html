@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HCMC - Patients</title>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/hcmcweb/patient/list">Patients</a> |
+        <a href="/hcmcweb/api/patient/list">Web API - JSON List of Patients</a>
+    </nav>
+</header>
+<div>
+    <h1>List of Patients</h1>
+    <div>
+        <table cellpadding="5" cellspacing="0" border="1">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Patient No</th>
+                <th>IsOutPatient</th>
+                <th>FullName</th>
+                <th>EmailAddress</th>
+                <th>ContactPhone</th>
+                <th>Date Of Birth</th>
+                <!--                    <th>#</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="patient, counter : ${patients}">
+                <th scope="row" th:text="${counter.count}"></th>
+                <td th:text="${patient.patientNumber}"></td>
+                <td th:text="${patient.isOutPatient}"></td>
+                <td th:text="${patient.fullName}"></td>
+                <td th:text="${patient.emailAddress}"></td>
+                <td th:text="${patient.contactPhoneNumber}"></td>
+                <td th:text="${patient.dateOfBirth}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
