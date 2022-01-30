@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping (value = "/hcmcweb/api/patient")
-public class PatientRESTController {
+public class PatientRestController {
     @Autowired
     private PatientService patientService;
 
